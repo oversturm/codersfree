@@ -1,0 +1,27 @@
+.btn{
+    @apply font-bold py-2 px-4 rounded;
+
+}
+.btn-primary{
+    @apply bg-blue-500 text-white;
+}
+
+.btn-primary:hover{
+    @apply bg-blue-700;
+}
+
+.btn-danger{
+    @apply bg-red-500 text-white;
+}
+
+.btn-danger:hover{
+    @apply bg-red-700;
+}
+
+.btn-card{
+    @apply block text-center w-full bg-blue-500 text-white font-bold mt-2 py-2 px-4 rounded;
+}
+
+.btn-card:hover{
+    @apply bg-blue-700;
+}
