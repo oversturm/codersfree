@@ -1,8 +1,9 @@
 <div class="container py-8">
 
     <x-table-responsive>
-        <div class="px-6 py-4">
-            <input type="text" wire:model="search" wire:keydown="limpiar_page" class="form-input shadow-sm w-full rounded-lg  border-gray-300 focus:border-gray-500 focus:ring-gray-500" placeholder="Ingrese el nombre de un curso">
+        <div class="px-6 py-4 flex">
+            <input type="text" wire:model="search" wire:keydown="limpiar_page" class="form-input shadow-sm flex-1 rounded-lg  border-gray-300 focus:border-gray-500 focus:ring-gray-500" placeholder="Ingrese el nombre de un curso">
+            <a href="{{ route('instructor.courses.create') }}" class="btn btn-danger ml-2">Crear nuevo Curso</a>
         </div>
 
         @if ($courses->count())
@@ -34,7 +35,12 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                    <img class="h-10 w-10 rounded-full" src="{{ Storage::url($course->image->url) }}" alt="">
+                                    @isset($course->image)
+                                        <img class="h-10 w-10 rounded-full object-cover object-center" src="{{ Storage::url($course->image->url) }}" alt="">
+                                    @else
+                                        <img class="h-10 w-10 rounded-full object-cover object-center" src="https://images.pexels.com/photos/35550/ipad-tablet-technology-touch.jpg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="">
+                                    @endisset
+
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">

@@ -18,6 +18,7 @@ class CoursesIndex extends Component
         //Cuando user_id sea igual al id del este usuario
         $courses = Course::where('title', 'LIKE', '%' . $this->search . '%')
                            ->where('user_id', auth()->user()->id)
+                           ->latest('id')
                            ->paginate(8);
 
         return view('livewire.instructor.courses-index', compact('courses'));
