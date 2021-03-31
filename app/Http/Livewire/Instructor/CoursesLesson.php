@@ -38,10 +38,10 @@ class CoursesLesson extends Component
         $this->validate($rules);
 
         Lesson::create([
-            'name' => $this->name,
+            'name'        => $this->name,
             'platform_id' => $this->platform_id,
-            'url' => $this->url,
-            'section_id' => $this->section->id
+            'url'         => $this->url,
+            'section_id'  => $this->section->id
 
         ]);
 
@@ -57,7 +57,7 @@ class CoursesLesson extends Component
         return view('livewire.instructor.courses-lesson');
     }
 
-    public function t(Lesson $lesson){
+    public function edit(Lesson $lesson){
 
         $this->resetValidation();
         $this->lesson = $lesson;
