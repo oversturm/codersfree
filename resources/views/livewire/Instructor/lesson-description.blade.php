@@ -2,7 +2,7 @@
    <article class="card" x-data="{open: false}">
        <div class="card-body bg-gray-100">
            <header>
-               <h1 x-on:click="open = !open" class="cursor-pointer">Descriptcion de la leccion</h1>
+               <h1 x-on:click="open = !open" class="cursor-pointer">Descripcion de la leccion</h1>
            </header>
 
            <div x-show="open">
