@@ -116,4 +116,9 @@ class CourseController extends Controller
     {
         $course->destroy('delete');
     }
+
+    public function goals(Course $course){
+
+        return view('instructor.courses.goals', compact('course'));
+    }
 }
